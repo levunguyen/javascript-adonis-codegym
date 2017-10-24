@@ -5,7 +5,7 @@ class HomesController {
 
   * index (request,response) {
     const news = yield New.all()
-    yield response.sendView('home', { posts: news.toJSON() });
+    yield response.sendView('pages/home', { posts: news.toJSON() });
   }
 
 }

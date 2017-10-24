@@ -1,27 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 <head>
-  <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
-  <link rel="stylesheet" href="/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free responsive business website template</title>
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/icons.css">
+  <link rel="stylesheet" href="css/responsee.css">
+  <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
+  <link rel="stylesheet" href="owl-carousel/owl.theme.css">
+  <!-- CUSTOM STYLE -->
+  <link rel="stylesheet" href="/public/css/template-style.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+  <script type="text/javascript" src="js/jquery-ui.min.js"></script>
 </head>
-<body>
-<div class="container">
-
-  <div class="header clearfix">
-    <nav>
-      <ul class="nav nav-pills pull-xs-right">
-        <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
-        <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
-      </ul>
-      <h3 class="text-muted"> Adonis Blog </h3>
-    </nav>
+<body class="size-1140">
+<!-- TOP NAV WITH LOGO -->
+{% include 'header' %}
+<section>
+  {% block content %}{% endblock %}
+</section>
+<!-- FOOTER -->
+<footer>
+  <div class="line">
+    <div class="s-12 l-6">
+      <p>Copyright 2017, Vision Design - graphic zoo
+      </p>
+    </div>
+    <div class="s-12 l-6">
+      <p class="right">
+        <a class="right" href="http://www.myresponsee.com" title="Responsee - lightweight responsive framework">Design and coding by Responsee Team</a>
+      </p>
+    </div>
   </div>
+</footer>
+<script type="text/javascript" src="js/responsee.js"></script>
+<script type="text/javascript" src="owl-carousel/owl.carousel.js"></script>
+<script type="text/javascript">
+  jQuery(document).ready(function($) {
+    $("#owl-demo").owlCarousel({
+      slideSpeed : 300,
+      autoPlay : true,
+      navigation : false,
+      pagination : false,
+      singleItem:true
+    });
+    $("#owl-demo2").owlCarousel({
+      slideSpeed : 300,
+      autoPlay : true,
+      navigation : false,
+      pagination : true,
+      singleItem:true
+    });
+  });
 
-  <section>
-    {% block content %}{% endblock %}
-  </section>
-
-</div>
+</script>
 </body>
 </html>
